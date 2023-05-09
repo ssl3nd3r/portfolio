@@ -1,0 +1,68 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-f22b4ba8.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/css/fonts/tajawal/Iura6YBj_oCad4k1nzGBCw.woff2": {
+    "file": "assets/Iura6YBj_oCad4k1nzGBCw-b081f7bf.woff2",
+    "src": "resources/css/fonts/tajawal/Iura6YBj_oCad4k1nzGBCw.woff2"
+  },
+  "resources/css/fonts/tajawal/Iura6YBj_oCad4k1nzSBC45I.woff2": {
+    "file": "assets/Iura6YBj_oCad4k1nzSBC45I-1f56c298.woff2",
+    "src": "resources/css/fonts/tajawal/Iura6YBj_oCad4k1nzSBC45I.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l4qkHrFpiQ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l4qkHrFpiQ-de8f431c.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l4qkHrFpiQ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l4qkHrRpiYlJ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l4qkHrRpiYlJ-328cc866.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l4qkHrRpiYlJ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5anHrFpiQ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l5anHrFpiQ-00241262.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5anHrFpiQ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5anHrRpiYlJ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l5anHrRpiYlJ-f35be424.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5anHrRpiYlJ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5qjHrFpiQ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l5qjHrFpiQ-d2c65721.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5qjHrFpiQ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5qjHrRpiYlJ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l5qjHrRpiYlJ-d30e711f.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l5qjHrRpiYlJ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l7KmHrFpiQ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l7KmHrFpiQ-518d9efe.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l7KmHrFpiQ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l7KmHrRpiYlJ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l7KmHrRpiYlJ-ec0d7262.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l7KmHrRpiYlJ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l8KiHrFpiQ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l8KiHrFpiQ-9986de5d.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l8KiHrFpiQ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l8KiHrRpiYlJ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l8KiHrRpiYlJ-ff5afc2f.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l8KiHrRpiYlJ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l_6gHrFpiQ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l_6gHrFpiQ-350afd4f.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l_6gHrFpiQ.woff2"
+  },
+  "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l_6gHrRpiYlJ.woff2": {
+    "file": "assets/Iurf6YBj_oCad4k1l_6gHrRpiYlJ-f6953bbb.woff2",
+    "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l_6gHrRpiYlJ.woff2"
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-e2b7cba5.js",
+    "isEntry": true,
+    "src": "resources/js/app.jsx"
+  }
+}
