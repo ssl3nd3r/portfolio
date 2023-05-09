@@ -49,7 +49,7 @@ export default function Info({info}) {
             <img loading='lazy' src="/storage/javascript.png" className='h-10 cursor-pointer hover:scale-105 transition-all'
             onMouseEnter={displaySkill()} onMouseLeave={() => setSkill(false)} alt="JavaScript" /> 
             <img loading='lazy' src="/storage/reactjs.png" className='h-10 cursor-pointer hover:scale-105 transition-all'
-            onMouseEnter={displaySkill()} onMouseLeave={() => setSkill(false)} alt="ReactJS" /> 
+            onMouseEnter={displaySkill()} onMouseLeave={() => setSkill(false)} alt="React" /> 
             <img loading='lazy' src="/storage/php.png" className='h-10 cursor-pointer hover:scale-105 transition-all'
             onMouseEnter={displaySkill()} onMouseLeave={() => setSkill(false)} alt="PHP" /> 
             <img loading='lazy' src="/storage/laravel.png" className='h-10 cursor-pointer hover:scale-105 transition-all'

@@ -1,6 +1,7 @@
 import './bootstrap';
 import { createInertiaApp } from '@inertiajs/react'
-import { createRoot } from 'react-dom/client'
+// import { createRoot } from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 
 createInertiaApp({
   title: title => 'Jimmy Jradeh',
@@ -9,6 +10,7 @@ createInertiaApp({
     return pages[`./Pages/${name}.jsx`]
   },
   setup({ el, App, props }) {
-    createRoot(el).render(<App  {...props} />)
+    // createRoot(el).render(<App  {...props} />)
+    hydrateRoot(el, <App {...props} />)
   },
 })
