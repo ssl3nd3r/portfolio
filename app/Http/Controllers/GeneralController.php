@@ -11,10 +11,10 @@ class GeneralController extends Controller
 {
     public function home()
     {
-        return Inertia::render('Main' , [
-            'projects' => Project::orderBy('created_at','desc')->get(),
-            'info' => Info::first()
-        ]);
+        $projects = Project::orderBy('created_at','desc')->get();
+        $info = Info::first();
+
+        return Inertia::render('Main' , compact('projects', 'info'));
     }
 
     public function project(Request $request) {

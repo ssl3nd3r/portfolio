@@ -1,0 +1,19 @@
+{
+    "HTML": "HTML",
+    "Laravel": "Laravel",
+    "Laravel Nova": "Laravel Nova",
+    "JavaScript": "JavaScript",
+    "AlpineJS": "AlpineJS",
+    "ReactJS": "ReactJS",
+    "Inertia": "Inertia",
+    "PHP": "PHP",
+    "JQuery": "JQuery",
+    "AJAX": "AJAX",
+    "Axios": "Axios",
+    "Livewire": "Livewire",
+    "Stripe": "Stripe",
+    "LDAP Authentication": "LDAP Authentication",
+    "CSS": "CSS",
+    "TailwindCSS": "TailwindCSS",
+    "GSAP": "GSAP"
+}

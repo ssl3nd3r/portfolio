@@ -9,7 +9,9 @@ use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\File;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Whitecube\NovaFlexibleContent\Flexible;
 
 class Info extends Resource
 {
@@ -52,6 +54,11 @@ class Info extends Resource
             URL::make('GitHub', 'github')->rules('required'),
             Email::make('Email', 'email')->rules('required'),
             File::make('Resume', 'resume')->creationRules('required'),
+            Flexible::make('Main Competencies', 'competencies')
+            ->addLayout('Skill', 'skill', [
+                Text::make('Title')->rules('required'),
+                Image::make('Logo')->creationRules('required')
+            ])->rules('required'),
         ];
     }
 

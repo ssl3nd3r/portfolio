@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
-import Application from './Components/Application';
-import Info from './Components/Info';
-import Project from './Components/Project';
+import Application from "../Components/Application"
+import Info from '../Components/Info';
+import Project from '../Components/Project';
 import Fade from '@mui/material/Fade';
 
 
@@ -35,7 +35,7 @@ export default function Main({projects , info}) {
             <Info info={info}/>
             <Fade in={main}>
               <div className='lg:absolute lg:right-0 lg:max-w-[45vw] xl:max-w-[55vw] p-8 lg:px-20 lg:py-14'>
-                <h1 className='text-lg font-bold'>Projects</h1>
+                {/* <h1 className='text-lg font-bold'>Projects</h1> */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 mt-4 group transition-opacity duration-500'>
                   {projects.map(app => (
                     <Application key={app.id} onLinkClick={viewProject()} application={app}/>
