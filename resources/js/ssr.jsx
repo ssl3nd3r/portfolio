@@ -12,5 +12,4 @@ createServer(page =>
     },
     setup: ({ App, props }) => <App {...props} />,
   }),
-  8888
 )

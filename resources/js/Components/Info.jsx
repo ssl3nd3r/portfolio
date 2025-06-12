@@ -47,7 +47,7 @@ export default function Info({info}) {
           <h1 className='mb-2 text-lg font-semibold'>Main Competencies:</h1>
           <div className='flex items-center flex-wrap gap-4'>
             {info.competencies.map(skill => (
-              <img loading='lazy' src={`/storage/${skill.attributes.logo}`} className='h-10 cursor-pointer hover:scale-105 transition-all'
+              <img key={skill.key} loading='lazy' src={`/storage/${skill.attributes.logo}`} className='h-10 cursor-pointer hover:scale-105 transition-all'
               onMouseEnter={displaySkill()} onMouseLeave={() => setSkill(false)} alt={skill.attributes.title} /> 
             ))}
           </div>

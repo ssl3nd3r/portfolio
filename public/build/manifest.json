@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-9b165be7.css",
+    "file": "assets/app-caf25a5c.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -61,7 +61,7 @@
     "src": "resources/css/fonts/tajawal/Iurf6YBj_oCad4k1l_6gHrRpiYlJ.woff2"
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-6cae36fc.js",
+    "file": "assets/app-289117c8.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }

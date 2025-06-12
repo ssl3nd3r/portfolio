@@ -32,10 +32,6 @@ function Application({ onLinkClick, application }) {
     /* @__PURE__ */ jsx("a", { id: application.id, onClick: linkClick(), className: "mt-auto w-fit quick-link", href: "#", children: "Learn More" })
   ] });
 }
-const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: Application
-}, Symbol.toStringTag, { value: "Module" }));
 function Info({ info }) {
   const [skill, setSkill] = useState(false);
   const theme = useRef();
@@ -79,85 +75,18 @@ function Info({ info }) {
     ] }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-2", children: [
       /* @__PURE__ */ jsx("h1", { className: "mb-2 text-lg font-semibold", children: "Main Competencies:" }),
-      /* @__PURE__ */ jsxs("div", { className: "flex items-center flex-wrap gap-4", children: [
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            loading: "lazy",
-            src: "/storage/javascript.png",
-            className: "h-10 cursor-pointer hover:scale-105 transition-all",
-            onMouseEnter: displaySkill(),
-            onMouseLeave: () => setSkill(false),
-            alt: "JavaScript"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            loading: "lazy",
-            src: "/storage/reactjs.png",
-            className: "h-10 cursor-pointer hover:scale-105 transition-all",
-            onMouseEnter: displaySkill(),
-            onMouseLeave: () => setSkill(false),
-            alt: "React"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            loading: "lazy",
-            src: "/storage/php.png",
-            className: "h-10 cursor-pointer hover:scale-105 transition-all",
-            onMouseEnter: displaySkill(),
-            onMouseLeave: () => setSkill(false),
-            alt: "PHP"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            loading: "lazy",
-            src: "/storage/laravel.png",
-            className: "h-10 cursor-pointer hover:scale-105 transition-all",
-            onMouseEnter: displaySkill(),
-            onMouseLeave: () => setSkill(false),
-            alt: "Laravel"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            loading: "lazy",
-            src: "/storage/html.png",
-            className: "h-10 cursor-pointer hover:scale-105 transition-all",
-            onMouseEnter: displaySkill(),
-            onMouseLeave: () => setSkill(false),
-            alt: "HTML"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            loading: "lazy",
-            src: "/storage/css.png",
-            className: "h-10 cursor-pointer hover:scale-105 transition-all",
-            onMouseEnter: displaySkill(),
-            onMouseLeave: () => setSkill(false),
-            alt: "CSS"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            loading: "lazy",
-            src: "/storage/tailwind.png",
-            className: "h-10 cursor-pointer hover:scale-105 transition-all",
-            onMouseEnter: displaySkill(),
-            onMouseLeave: () => setSkill(false),
-            alt: "TailwindCSS"
-          }
-        )
-      ] }),
+      /* @__PURE__ */ jsx("div", { className: "flex items-center flex-wrap gap-4", children: info.competencies.map((skill2) => /* @__PURE__ */ jsx(
+        "img",
+        {
+          loading: "lazy",
+          src: `/storage/${skill2.attributes.logo}`,
+          className: "h-10 cursor-pointer hover:scale-105 transition-all",
+          onMouseEnter: displaySkill(),
+          onMouseLeave: () => setSkill(false),
+          alt: skill2.attributes.title
+        },
+        skill2.key
+      )) }),
       /* @__PURE__ */ jsx("div", { ref: skillName, className: `${skill ? "w-[200px]" : "w-0"} transition-all duration-500 overflow-hidden font-semibold text-lg text-[#059669]`, children: "JavaScript" })
     ] }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-3", children: [
@@ -187,17 +116,13 @@ function Info({ info }) {
       ] }),
       /* @__PURE__ */ jsxs("span", { className: "text-sm", children: [
         "Inspired by ",
-        /* @__PURE__ */ jsx("a", { className: "quick-link", href: "https://www.sarahdayan.dev/", children: "Sarah Dayan" }),
+        /* @__PURE__ */ jsx("a", { className: "quick-link", target: "_blank", href: "https://www.sarahdayan.dev/", children: "Sarah Dayan" }),
         " and ",
-        /* @__PURE__ */ jsx("a", { className: "quick-link", href: "https://dribbble.com/NicolasMzrd", children: "Nicolas Meuzard" })
+        /* @__PURE__ */ jsx("a", { className: "quick-link", target: "_blank", href: "https://dribbble.com/NicolasMzrd", children: "Nicolas Meuzard" })
       ] })
     ] })
   ] });
 }
-const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: Info
-}, Symbol.toStringTag, { value: "Module" }));
 function createMixins(breakpoints, mixins) {
   return _extends({
     toolbar: {
@@ -1073,10 +998,14 @@ function Project({ open, onBackLink, projectId }) {
         "/project",
         { id: projectId }
       ).then(function(res) {
-        setLoading(false);
         setProject(res.data);
+        setTimeout(() => {
+          setLoading(false);
+        }, 100);
       }).catch(function(res) {
-        console.log(res);
+        console.error(res);
+        setLoading(false);
+        onBackLink();
       });
     }
   }, [open]);
@@ -1086,35 +1015,20 @@ function Project({ open, onBackLink, projectId }) {
     };
   };
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsx(Fade$1, { in: open && loading, timeout: 500, children: /* @__PURE__ */ jsxs("div", { className: "absolute w-full h-full", children: [
-      /* @__PURE__ */ jsx("a", { onClick: backLink(), href: "#", className: "absolute left-8 top-8 md:left-20 md:top-10 z-5 app-link hover:bg-[#059669] p-3 rounded-full transition-all", children: /* @__PURE__ */ jsx("img", { className: "h-[20px] w-[20px] transition-all", src: "/storage/back.svg", alt: "" }) }),
-      /* @__PURE__ */ jsx("img", { className: "h-32 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]", src: "/storage/puff.svg", alt: "" })
-    ] }) }),
+    /* @__PURE__ */ jsx(Fade$1, { in: open && loading, timeout: 10, children: /* @__PURE__ */ jsx("div", { className: "absolute w-full h-full", children: /* @__PURE__ */ jsx("img", { className: "h-32 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]", src: "/storage/puff.svg", alt: "" }) }) }),
     /* @__PURE__ */ jsx(Fade$1, { in: !loading && open, timeout: 500, children: /* @__PURE__ */ jsxs("div", { className: `p-8 md:px-20 md:py-10 w-full flex flex-col gap-8`, children: [
       /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between", children: [
         /* @__PURE__ */ jsx("a", { onClick: backLink(), href: "#", className: "app-link relative hover:bg-[#059669] p-3 rounded-full transition-all", children: /* @__PURE__ */ jsx("img", { className: "h-[20px] w-[20px] transition-all", src: "/storage/back.svg", alt: "" }) }),
         /* @__PURE__ */ jsx("span", { className: "font-semibold text-2xl text-center", children: project.title }),
         /* @__PURE__ */ jsx("a", { href: project.url ?? "#", target: "_blank", className: `${project.url ? "" : "pointer-events-none opacity-50"} app-link relative hover:bg-[#059669] p-3 rounded-full transition-all`, children: /* @__PURE__ */ jsx("img", { className: "h-[20px] w-[20px] transition-all", src: "/storage/visit.svg", alt: "" }) })
       ] }),
-      /* @__PURE__ */ jsx("img", { src: `/storage/${project.image}`, className: "w-full h-[300px] md:h-[500px] object-cover object-top rounded-md", alt: "" }),
-      /* @__PURE__ */ jsxs("div", { className: "text-xl md:text-3xl mt-4", children: [
+      /* @__PURE__ */ jsx("div", { style: { backgroundImage: `url('/storage/${project.image_1 ?? project.image}')` }, className: "flex flex-col p-6 justify-center items-center  bg-black/80 bg-blend-darken gap-8 object-top rounded-md bg-cover bg-center min-h-[calc(100dvh_-_152px)] md:min-h-[calc(100dvh_-_160px)]", children: /* @__PURE__ */ jsxs("div", { className: "text-xl md:text-3xl max-w-[82%] md:max-w-[66%]", children: [
         parse(project.description ?? ""),
-        /* @__PURE__ */ jsx("div", { className: "text-lg md:text-xl font-bold mt-4", children: f.format(JSON.parse(project.technologies ?? "[]")) })
-      ] })
+        /* @__PURE__ */ jsx("div", { className: "text-lg md:text-xl font-bold mt-8", children: f.format(project.technologies ?? []) })
+      ] }) })
     ] }) })
   ] });
 }
-const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: Project
-}, Symbol.toStringTag, { value: "Module" }));
-function ThemeSwitch() {
-  return /* @__PURE__ */ jsx("div", { children: "ThemeSwitch" });
-}
-const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: ThemeSwitch
-}, Symbol.toStringTag, { value: "Module" }));
 function Main({ projects, info }) {
   const [main, setMain] = useState(true);
   const [open, setOpen] = useState(false);
@@ -1139,15 +1053,12 @@ function Main({ projects, info }) {
   return /* @__PURE__ */ jsxs("main", { className: "text-slate-800 dark:text-slate-200 flex gap-4", children: [
     /* @__PURE__ */ jsxs("div", { className: `flex flex-col lg:flex-row justify-between absolute left-0 w-full transition-all duration-500 ${main ? "" : "left-[-100vw]"}`, children: [
       /* @__PURE__ */ jsx(Info, { info }),
-      /* @__PURE__ */ jsx(Fade$1, { in: main, children: /* @__PURE__ */ jsxs("div", { className: "lg:absolute lg:right-0 lg:max-w-[45vw] xl:max-w-[55vw] p-8 lg:px-20 lg:py-14", children: [
-        /* @__PURE__ */ jsx("h1", { className: "text-lg font-bold", children: "Projects" }),
-        /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 mt-4 group transition-opacity duration-500", children: projects.map((app) => /* @__PURE__ */ jsx(Application, { onLinkClick: viewProject(), application: app }, app.id)) })
-      ] }) })
+      /* @__PURE__ */ jsx(Fade$1, { in: main, children: /* @__PURE__ */ jsx("div", { className: "lg:absolute lg:right-0 lg:max-w-[45vw] xl:max-w-[55vw] p-8 lg:px-20 lg:py-14", children: /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 mt-4 group transition-opacity duration-500", children: projects.map((app) => /* @__PURE__ */ jsx(Application, { onLinkClick: viewProject(), application: app }, app.id)) }) }) })
     ] }),
     /* @__PURE__ */ jsx(Project, { onBackLink: closeProject(), open, projectId })
   ] });
 }
-const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Main
 }, Symbol.toStringTag, { value: "Module" }));
@@ -1156,10 +1067,9 @@ createServer(
     page,
     render: ReactDOMServer.renderToString,
     resolve: (name) => {
-      const pages = /* @__PURE__ */ Object.assign({ "./Pages/Components/Application.jsx": __vite_glob_0_0, "./Pages/Components/Info.jsx": __vite_glob_0_1, "./Pages/Components/Project.jsx": __vite_glob_0_2, "./Pages/Components/ThemeSwitch.jsx": __vite_glob_0_3, "./Pages/Main.jsx": __vite_glob_0_4 });
+      const pages = /* @__PURE__ */ Object.assign({ "./Pages/Main.jsx": __vite_glob_0_0 });
       return pages[`./Pages/${name}.jsx`];
     },
     setup: ({ App, props }) => /* @__PURE__ */ jsx(App, { ...props })
-  }),
-  8888
+  })
 );
