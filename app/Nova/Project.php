@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\TextArea;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Code;
 use Outl1ne\MultiselectField\Multiselect;
 // use Laravel\Nova\Fields\MultiSelect;
@@ -62,7 +62,7 @@ class Project extends Resource
             Image::make('Image','image')->creationRules('required'),
             Image::make('Background Image','image_1')->creationRules('required'),
             Code::make('Description','description')->rules('required'),
-            TextArea::make('Short Description','short_description')->rules('required'),
+            Textarea::make('Short Description','short_description')->rules('required'),
 
             Multiselect::make('Technologies Used', 'technologies')
             // 1) Load existing options from JSON
