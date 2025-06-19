@@ -12,9 +12,12 @@ use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Whitecube\NovaFlexibleContent\Flexible;
+use App\Nova\Traits\OnlyEditMode;
 
 class Info extends Resource
 {
+    use OnlyEditMode;
+
     /**
      * The model the resource corresponds to.
      *
@@ -57,7 +60,11 @@ class Info extends Resource
             Flexible::make('Main Competencies', 'competencies')
             ->addLayout('Skill', 'skill', [
                 Text::make('Title')->rules('required'),
-                Image::make('Logo')->creationRules('required')
+                Image::make('Logo')
+                    ->disk('public')
+                    ->preview(fn($value, $disk) => $value ? asset('storage/' . $value) : null)
+                    ->thumbnail(fn($value, $disk) => $value ? asset('storage/' . $value) : null)
+                    ->creationRules('required')
             ])->rules('required'),
         ];
     }

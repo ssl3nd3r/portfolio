@@ -9,9 +9,12 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use App\Nova\Traits\OnlyEditMode;
 
 class User extends Resource
 {
+    use OnlyEditMode;
+
     /**
      * The model the resource corresponds to.
      *

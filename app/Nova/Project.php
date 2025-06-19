@@ -13,9 +13,12 @@ use Outl1ne\MultiselectField\Multiselect;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use App\Nova\Traits\OnlyEditMode;
 
 class Project extends Resource
 {
+    use OnlyEditMode;
+
     /**
      * The model the resource corresponds to.
      *
@@ -82,7 +85,7 @@ class Project extends Resource
                 $newTags = array_values(array_diff($selected, array_keys($allOptions)));
 
                 if (! empty($newTags)) {
-                    // For each new tag, append to the JSON file’s array
+                    // For each new tag, append to the JSON file's array
                     foreach ($newTags as $tag) {
                         // Use the tag itself as both key and label; adjust if you want a separate label
                         $allOptions[$tag] = $tag;
